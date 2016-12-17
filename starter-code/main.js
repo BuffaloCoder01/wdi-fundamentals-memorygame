@@ -19,7 +19,9 @@ for(var i = 1; i <= 4; i++){
 	}
 }
 
+
 createCards();
+
 
 
 
@@ -28,17 +30,23 @@ var cardsInPlay = [];
 function createBoard() {
 
 	var cards = ["queen", "queen", "king", "king"];
+    var cardArr = document.getElementsByClassName("card");
+    for(var j = 0; j < cards.length; j++){
 
-	for(var i = 0; i<cards.length; i++){
+    cardArr[j].setAttribute("data-card", cards[j]);
+	  cardArr[j].addEventListener("click", isTwoCards)
 
-	 document.querySelector(".card").setAttribute("data-card", cards[i]);
-	
-	 document.querySelector(".card").addEventListener("click", isTwoCards)
 	}
 }
 
 
 createBoard();
+
+
+
+
+
+
 
 
 //checks to see if there are cards in play

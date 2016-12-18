@@ -1,4 +1,4 @@
-/*   The Memory Game */
+ /*   The Memory Game */
 
 
 function createCards(){
@@ -35,6 +35,7 @@ function createBoard() {
 
     cardArr[j].setAttribute("data-card", cards[j]);
 	  cardArr[j].addEventListener("click", isTwoCards)
+    cardArr[j].addEventListener("click", isTwoCards)
 
 	}
 }
@@ -73,7 +74,14 @@ function isTwoCards() {
 
 var isMatch = function(){
 
-alert(cardsInPlay[0] === cardsInPlay[1])
+if(cardsInPlay[0] === cardsInPlay[1]){
+
+  alert("You chose correctly");
+}
+else{
+
+  alert("You lose, try again");
+}
 
 
 }

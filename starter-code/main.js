@@ -35,8 +35,8 @@ function createBoard() {
 
     cardArr[j].setAttribute("data-card", cards[j]);
 	  cardArr[j].addEventListener("click", isTwoCards)
-    cardArr[j].addEventListener("click", isTwoCards)
-
+    cardArr[j].addEventListener("click", flipCard)
+    
 	}
 }
 
@@ -44,6 +44,29 @@ function createBoard() {
 createBoard();
 
 
+
+///THIS FLIPS THE CARD
+
+function flipCard(){
+
+var theCard = this.getAttribute('data-card');
+
+
+
+if(theCard === "queen"){
+  
+  //flip the card
+
+  this.innerHTML = '<img src="queen.jpg" alt="Queen of Spades" />'
+  }
+
+  else{
+    //flip the card
+
+    this.innerHTML = '<img src="king.jpg" alt="King of Spades" />';
+  }
+
+}
 
 
 

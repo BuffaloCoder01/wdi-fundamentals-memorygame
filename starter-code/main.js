@@ -7,22 +7,19 @@ var gameBoard = document.getElementById('game-board');
 
 for(var i = 1; i <= 4; i++){
 
-  //Create newCard as a Div 
+  //Create newCard as a Div
 
 	var newCard = document.createElement('div');
 
-  //Add Class of .card to the NewCard	
+  //Add Class of .card to the NewCard
 	newCard.className = 'card';
-	
-  // Append card to the board	
+
+  // Append card to the board
 	gameBoard.appendChild(newCard);
 	}
 }
 
-
 createCards();
-
-
 
 
 var cardsInPlay = [];
@@ -36,14 +33,11 @@ function createBoard() {
     cardArr[j].setAttribute("data-card", cards[j]);
 	  cardArr[j].addEventListener("click", isTwoCards)
     cardArr[j].addEventListener("click", flipCard)
-    
 	}
 }
 
 
 createBoard();
-
-
 
 ///THIS FLIPS THE CARD
 
@@ -52,26 +46,17 @@ function flipCard(){
 var theCard = this.getAttribute('data-card');
 
 
+	if(theCard === "queen"){
 
-if(theCard === "queen"){
-  
-  //flip the card
-
-  this.innerHTML = '<img src="queen.jpg" alt="Queen of Spades" />'
-  }
+	  //flip the card
+	  this.innerHTML = '<img src="queen.jpg" alt="Queen of Spades" />'
+	  }
 
   else{
-    //flip the card
-
-    this.innerHTML = '<img src="king.jpg" alt="King of Spades" />';
-  }
-
+	    //flip the card
+	    this.innerHTML = '<img src="king.jpg" alt="King of Spades" />';
+	  }
 }
-
-
-
-
-
 
 //checks to see if there are cards in play
 function isTwoCards() {
@@ -89,24 +74,19 @@ function isTwoCards() {
 
     // clear cards in play array for next try
     cardsInPlay = [];
-
   }
-
 }
 
 
 var isMatch = function(){
+	if(cardsInPlay[0] === cardsInPlay[1]){
 
-if(cardsInPlay[0] === cardsInPlay[1]){
+	  alert("You chose correctly");
+	}
+	else{
 
-  alert("You chose correctly");
-}
-else{
-
-  alert("You lose, try again");
-}
-
-
+	  alert("You lose, try again");
+	    }
 }
 
 
@@ -114,18 +94,8 @@ else{
 
 
 
+/**************
 
-
-
-
-
-
-
-
-
-
-
-/*****
 if(cardOne === cardTwo){
 	alert("You found a match");
 }
